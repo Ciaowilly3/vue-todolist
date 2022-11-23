@@ -2,6 +2,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      newText: "",
       tasksToDoArray: [
         {
           text: "Prendi il pane",
@@ -39,6 +40,14 @@ const app = createApp({
         done: false,
       };
       this.tasksToDoArray.push(newTask);
+    },
+    setDone(indexToCut) {
+      let state = this.tasksToDoArray[indexToCut].done;
+      if (state === false) {
+        this.tasksToDoArray[indexToCut].done = true;
+      } else {
+        this.tasksToDoArray[indexToCut].done = false;
+      }
     },
   },
 }).mount("#app");
