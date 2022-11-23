@@ -32,5 +32,13 @@ const app = createApp({
         this.tasksToDoArray.splice(indexToDelete, 1);
       }
     },
+    getNewTask(newText) {
+      //   aggiungo la new task all'array pre-compilato
+      const newTask = {
+        text: newText,
+        done: false,
+      };
+      this.tasksToDoArray.push(newTask);
+    },
   },
 }).mount("#app");

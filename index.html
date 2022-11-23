@@ -21,10 +21,34 @@
   </head>
   <body class="bg-secondary">
     <div class="container">
-      <h1 class="text-center mb-5">To do list</h1>
+      <h1 class="mb-5">To do list</h1>
     </div>
     <!-- container con id app che conterrà il contenuto dinamico -->
+
     <div class="container" id="app">
+      <!-- input area -->
+      <form class="d-flex w-50">
+        <div class="pe-2 flex-grow-1">
+          <label for="newTask" class="visually-hidden"></label>
+          <input
+            type="text"
+            class="form-control"
+            id="newTask"
+            placeholder="Inserisci la nuova task"
+            v-model="newText"
+          />
+        </div>
+        <div class="ps-2">
+          <button
+            type="submit"
+            class="btn btn-primary mb-3"
+            @click.prevent="getNewTask(newText)"
+          >
+            Crea Task
+          </button>
+        </div>
+      </form>
+      <!-- lista di cose -->
       <ul class="list-group shadow">
         <li
           v-for="task,i in tasksToDoArray"

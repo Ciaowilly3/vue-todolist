@@ -10,3 +10,9 @@ h1 {
   border: none;
   color: rgb(187, 26, 26);
 }
+.form-control {
+  background-color: rgb(245, 238, 229);
+}
+.form-control:focus {
+  background-color: rgb(245, 238, 229);
+}
