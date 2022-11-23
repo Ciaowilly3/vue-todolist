@@ -22,4 +22,15 @@ const app = createApp({
       ],
     };
   },
+  methods: {
+    removeTask(indexToDelete) {
+      //   aggiungo un confirm per correttezza come fatto da Florian
+      const remove = confirm(
+        "Sei sicuro di voler eliminare il task selezionato?"
+      );
+      if (remove === true) {
+        this.tasksToDoArray.splice(indexToDelete, 1);
+      }
+    },
+  },
 }).mount("#app");

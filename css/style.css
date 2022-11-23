@@ -5,3 +5,8 @@ h1 {
   font-weight: 700;
   color: rgb(40, 35, 33);
 }
+.my-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(187, 26, 26);
+}

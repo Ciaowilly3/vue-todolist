@@ -9,6 +9,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
@@ -20,11 +27,14 @@
     <div class="container" id="app">
       <ul class="list-group shadow">
         <li
-          v-for="task in tasksToDoArray"
-          class="list-group-item"
+          v-for="task,i in tasksToDoArray"
+          class="list-group-item d-flex justify-content-between"
           :class="(task.done === true) ? 'text-decoration-line-through' : ''"
         >
           {{task.text}}
+          <button class="my-btn" @click="removeTask(i)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </li>
       </ul>
     </div>
